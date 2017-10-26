@@ -1,4 +1,4 @@
-/*NOTE: PROMPT
+/* NOTE: PROMPT (easy)
 Given an array of integers, return indices of the two numbers such that they add up to a specific target.
 
 You may assume that each input would have exactly one solution, and you may not use the same element twice.
@@ -20,5 +20,4 @@ const twoSum = (nums, target) => {
   }
 }
 
-//NOTE: attempted to use forEach() for the loop, but learned
-//that the forEach method, does not stop when "return"ing output.
+/* NOTE: attempted to use forEach() for the loop, but learned that the forEach method, does not stop when "return"ing output. */
