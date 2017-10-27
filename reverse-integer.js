@@ -10,15 +10,18 @@ The input is assumed to be a 32-bit signed integer. Your function should return 
 
 const reverse = (x) => {
   // Reverse the integer (make it a string first and reverse it?)
-    let numToString = x.toString();
-    if (numToString[0] === '-') {
-      numToString.splice(0,1);
-      numToString.split('').reverse().join('');
-      const reversed = -1 * parseInt(numToString);
-
-      (reversed < -2,147,483,648 || reversed > 2,147,483,647) ? 0 : reversed;
-    }
-    else return numToString.split('').reverse().join('');
+  const numToString = x.toString();
+  if (numToString[0] === '-') {
+    numToString.splice(0,1);
+    const revString = numToString.split('').reverse().join('');
+    const revNumber = -1 * parseInt(revString);
+    revNumber < -2,147,483,648 || revNumber > 2,147,483,647) ? 0 : revNumber;
+  }
+  else {
+    const revString = numToString.split('').reverse().join('');
+    const revNumber = parseInt(revString);
+    (revNumber < -2,147,483,648 || revNumber > 2,147,483,647) ? 0 : revNumber;
+  }
 }
 
 /* NOTE: attempted to use forEach() for the loop, but learned that the forEach method, does not stop when "return"ing output. */
