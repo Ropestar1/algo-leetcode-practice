@@ -10,18 +10,21 @@ The input is assumed to be a 32-bit signed integer. Your function should return 
 
 const reverse = (x) => {
   // Reverse the integer (make it a string first and reverse it?)
-  const numToString = x.toString();
-  if (numToString[0] === '-') {
-    numToString.splice(0,1);
-    const revString = numToString.split('').reverse().join('');
+  let numToArray = x.toString().split('');
+  // console.log(numToArray);
+  if (numToArray[0] === '-') {
+    numToArray.splice(0,1);
+    const revString = numToArray.reverse().join('');
     const revNumber = -1 * parseInt(revString);
-    revNumber < -2,147,483,648 || revNumber > 2,147,483,647) ? 0 : revNumber;
+    ((revNumber < -2147483648) || (revNumber > 2147483647)) ? console.log(0) : console.log(revNumber);
   }
   else {
-    const revString = numToString.split('').reverse().join('');
+    const revString = numToArray.reverse().join('');
     const revNumber = parseInt(revString);
-    (revNumber < -2,147,483,648 || revNumber > 2,147,483,647) ? 0 : revNumber;
+    ((revNumber < -2147483648) || (revNumber > 2147483647)) ? console.log(0) : console.log(revNumber);
   }
 }
 
-/* NOTE: attempted to use forEach() for the loop, but learned that the forEach method, does not stop when "return"ing output. */
+// reverse(2147483648);
+
+/* NOTE: tests fine in my Terminal, but went put into Leetcode it syntax errors. */
